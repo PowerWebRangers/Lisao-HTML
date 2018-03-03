@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+		<head>
+			<!-- Nombre de la pestaña en el navegador-->
+			<title>Modelo 145</title>
+
+			<!-- Metainformación sobre el documento-->
+			<meta charset="utf-8">
+			<meta name="author" content="Grupo 10 - IU" /> 
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+			<!-- Etiquetas para el navegador-->
+			<meta name="keywords" content="IU, HTML, UCM, modelo 145, informática, web" />
+			<meta name="description" content="Diseño del modelo 145 del IRPF" />
+
+        <!-- Links -->
+      <link rel="icon" href="../images/ico_sede2.gif">
+        <!-- Bootstrap core CSS -->
+      <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+          <!-- Bootstrap theme -->
+      <link href="../dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+      <link href="../css/estilosPropios.css" rel="stylesheet">
+
+		</head>
+
+		<body>
+       <!-- NAVEGACIÓN Y LOGO-->
+      <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+              <div class="col-md-1"> </div>
+              <div class="col-md-5"> 
+                <h2>Impuesto sobre la Renta de las Personas Físicas</h2>
+                  <h3><p class="text-muted">Retenciones sobre rendimientos del trabajo</p></h3>
+
+              </div>
+              <div class="col-md-1"> </div>
+              <div class="col-md-3"> 
+                <img src = "../images/logoHacienda.png" class= "img-responsive" alt= "Imagen responsive">
+              </div>
+              <div class="col-md-2">
+                <h3><p class="text-danger">Modelo 145</p></h3>
+               </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="container theme-showcase" role="main">
+
+      <div class="row">
+        <div class="col-md-2"> </div>
+         <div class="col-md-7"> 
+            <div class="row">
+                <div class="col-md-1"> 
+                 <p class="text-info"> Datos personales</p>
+                </div>
+                <div class="col-md-1"> </div>
+                <div class="col-md-1"> 
+                 <p class="text-info"> Situación familiar</p>
+                </div>
+                <div class="col-md-1"> </div>
+
+                <div class="col-md-1"> 
+                 <p class="text-info"> Hijos descendientes</p>
+                </div>
+                <div class="col-md-1"> </div>
+
+                <div class="col-md-1"> 
+                 <p class="text-info"> Mayores ascendientes</p>
+                </div>
+                <div class="col-md-1"> </div>
+
+                <div class="col-md-1"> 
+                 <p class="text-info"> Trabajo</p>
+                </div>
+                <div class="col-md-1"> </div>
+
+                <div class="col-md-1"> 
+                 <p class="text-info"> Pagos</p>
+                </div>                
+
+            </div>
+
+        </div>
+        <div class="col-md-1"> 
+                 <p class="text-info"> Firma</p>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <!--<h5><center>Default Size</center></h5>-->
+        <div class="col-md-2"> </div>
+
+         <div class="col-md-7"> 
+
+          <div class="row">
+            <div class="col-md-1"> 
+              <a href="./datosPersonales.html" data-toggle="modal" data-target="#./datosPersonales.html" class="btn btn-circle btn-info" role="button">1</a></a>
+            </div>
+                    <div class="col-md-1"> </div>
+            <div class="col-md-1"> 
+              <a href = "./situacionFamiliar.html" data-toggle="modal" data-target="#./situacionFamiliar.html" class="btn btn-circle btn-info" role="button">2</a>
+            </div>
+                    <div class="col-md-1"> </div>
+            <div class="col-md-1">  
+              <a href = "./hijosyDescendientes.html" data-toggle="modal" data-target="#./hijosyDescendientes.html" class="btn btn-circle btn-info" role="button">3</a>
+            </div>
+                    <div class="col-md-1"> </div>
+
+            <div class="col-md-1"> 
+                <a href = "./Mayores.html" data-toggle="modal" data-target="#./Mayores.html" class="btn btn-circle btn-primary" role="button">4</a>
+            </div>
+                    <div class="col-md-1"> </div>
+
+            <div class="col-md-1"> 
+              <a href = "./trabajo.html" data-toggle="modal" data-target="#./trabajo.html" class="btn btn-circle btn-info" role="button">5</a>
+            </div>
+                    <div class="col-md-1"> </div>
+
+            <div class="col-md-1"> 
+              <a href = "./pagos.html" data-toggle="modal" data-target="#./pagos.html" class="btn btn-circle btn-info" role="button">6</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-1"> 
+              <a href = "./FechaYFirma.html" data-toggle="modal" data-target="#./FechaYFirma.html" class="btn btn-circle btn-info" role="button">7</a>
+
+        </div>
+
+      </div>
+      <!-- /NAVEGACIÓN Y LOGO-->
+      </br>
+      </br>
+        <h1> 
+          Mayores de 65 años o discapacitados
+        </h1>
+
+        <div class="panel panel-default">
+            <div class="panel-body"> 
+        <p class="text-danger">Rellene sólo los casos en los que sus familiares no superen rentas superiores a los 8000 euros anuales.</p>
+        <!--SOLTERO O CASADO-->
+        <table>
+        <thead>
+        <tr>
+           <th class="col-sm-3">Año de nacimiento</th>
+           <th class="col-sm-2">Grado de discapacidad</th>
+           <th class="col-sm-1">Necesidades </th>
+           <th class="col-sm-5">Convivencia con otros descendientes
+            <span class="glyphicon glyphicon-warning-sign" data-toggle= "tooltip" title = "Si alguno de los familiares convive con otros descendientes al menos medio año, indicar el número de personas.">
+              </span></th>
+
+
+        </tr>
+        </thead>
+        <tfoot>
+        </tfoot>
+        <br/>
+        <!--PRIMERA FILA PARA EL PRIMER HIJO-->
+        <tbody>
+        <tr>
+           <td class="col-sm-4">
+                <div class="row"><!--PRIMER FILA DONDE PONDRE: DIA, MES Y AÑO-->
+                  <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder="Día">
+                  </div>
+                  <div class="col-md-4">
+                    <p></p>
+                  <select name="Mes">
+                            <option value="Enero">Enero</option>
+                            <option value="Febrero">Febrero</option>
+                            <option value="Marzo">Marzo</option>
+                            <option value="Abril">Abril</option>
+                            <option value="Mayo">Mayo</option>
+                            <option value="Junio">Julio</option>
+                            <option value="Agosto">Agosto</option>
+                            <option value="Septiembre">Septiembre</option>
+                            <option value="Octubre">Octubre</option>
+                            <option value="Noviembre">Noviembre</option>
+                            <option value="Diciembre">Diciembre</option>
+                          </select>
+                  </div>
+                  <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder="Año"><!--Día-->
+                  </div>
+            
+              </td><!--AÑO DE NACIMIENTO-->
+                
+           <td class="col-sm-2"> <select name="discapacidad">
+
+            <option value="35">Entre 0% y 35%</option>
+            <option value="65">Entre 35% y 65%</option>
+            <option value="100">Mayor de 65%</option>
+        </select></td><!--GRADO DISCAP-->
+
+
+        <td class="col-sm-3">
+          <input name="java" type="checkbox" value="on"/> Tiene acreditada la necesidad de ayuda de terceros  </td><!--NECESIDADES-->       
+        <td>
+      <div class="col-md-7">
+      <div class="center">
+          <p>
+            </p><div class="input-group">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </span>
+                <input type="text" name="quant[1]" class="form-control input-number" value="0" min="0" max="10">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </span>
+            </div>
+          <p></p>
+          </div>
+        </div>
+
+        </td> 
+        
+          </tr>
+
+          <tr>
+           <td class="col-sm-4">
+                <div class="row"><!--PRIMER FILA DONDE PONDRE: DIA, MES Y AÑO-->
+                  <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder="Día">
+                  </div>
+                  <div class="col-md-4">
+                    <p></p>
+                  <select name="Mes">
+                            <option value="Enero">Enero</option>
+                            <option value="Febrero">Febrero</option>
+                            <option value="Marzo">Marzo</option>
+                            <option value="Abril">Abril</option>
+                            <option value="Mayo">Mayo</option>
+                            <option value="Junio">Julio</option>
+                            <option value="Agosto">Agosto</option>
+                            <option value="Septiembre">Septiembre</option>
+                            <option value="Octubre">Octubre</option>
+                            <option value="Noviembre">Noviembre</option>
+                            <option value="Diciembre">Diciembre</option>
+                          </select>
+                  </div>
+                  <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder="Año"><!--Día-->
+                  </div>
+
+                </div>
+              </td><!--AÑO DE NACIMIENTO-->
+                
+           <td class="col-sm-2"> <select name="discapacidad">
+
+            <option value="35">Entre 0% y 35%</option>
+            <option value="65">Entre 35% y 65%</option>
+            <option value="100">Mayor de 65%</option>
+        </select></td><!--GRADO DISCAP-->
+
+
+        <td class="col-md-3">
+          <input name="java" type="checkbox" value="on"/> Tiene acreditada la necesidad de ayuda de terceros  </td><!--NECESIDADES-->       
+        <td>
+      <div class="col-md-7">
+      <div class="center">
+          <p>
+            </p><div class="input-group">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[2]">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </span>
+                <input type="text" name="quant[2]" class="form-control input-number" value="0" min="0" max="10">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </span>
+            </div>
+          <p></p>
+          </div>
+        </div>
+
+        </td> 
+        
+          </tr>
+          <tr>
+           <td class="col-sm-4">
+                <div class="row"><!--PRIMER FILA DONDE PONDRE: DIA, MES Y AÑO-->
+                  <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder="Día">
+                  </div>
+                  <div class="col-md-4">
+                    <p></p>
+                  <select name="Mes">
+                            <option value="Enero">Enero</option>
+                            <option value="Febrero">Febrero</option>
+                            <option value="Marzo">Marzo</option>
+                            <option value="Abril">Abril</option>
+                            <option value="Mayo">Mayo</option>
+                            <option value="Junio">Julio</option>
+                            <option value="Agosto">Agosto</option>
+                            <option value="Septiembre">Septiembre</option>
+                            <option value="Octubre">Octubre</option>
+                            <option value="Noviembre">Noviembre</option>
+                            <option value="Diciembre">Diciembre</option>
+                          </select>
+                  </div>
+                  <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder="Año"><!--Día-->
+                  </div>
+
+                </div>
+              </td><!--AÑO DE NACIMIENTO-->
+                
+           <td class="col-sm-2"> <select name="discapacidad">
+
+            <option value="35">Entre 0% y 35%</option>
+            <option value="65">Entre 35% y 65%</option>
+            <option value="100">Mayor de 65%</option>
+        </select></td><!--GRADO DISCAP-->
+
+
+        <td class="col-md-3">
+          <input name="java" type="checkbox" value="on"/> Tiene acreditada la necesidad de ayuda de terceros  </td><!--NECESIDADES-->       
+        <td>
+      <div class="col-md-7">
+      <div class="center">
+          <p>
+            </p><div class="input-group">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[3]">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </span>
+                <input type="text" name="quant[3]" class="form-control input-number" value="0" min="0" max="10">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[3]">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </span>
+            </div>
+          <p></p>
+          </div>
+        </div>
+
+        </td> 
+        
+          </tr>
+          <tr>
+           <td class="col-sm-1">
+                <div class="row"><!--PRIMER FILA DONDE PONDRE: DIA, MES Y AÑO-->
+                  <div class="col-md-3">
+                  <input type="text" class="form-control" placeholder="Día">
+                  </div>
+                  <div class="col-md-4">
+                    <p></p>
+                  <select name="Mes">
+                            <option value="Enero">Enero</option>
+                            <option value="Febrero">Febrero</option>
+                            <option value="Marzo">Marzo</option>
+                            <option value="Abril">Abril</option>
+                            <option value="Mayo">Mayo</option>
+                            <option value="Junio">Julio</option>
+                            <option value="Agosto">Agosto</option>
+                            <option value="Septiembre">Septiembre</option>
+                            <option value="Octubre">Octubre</option>
+                            <option value="Noviembre">Noviembre</option>
+                            <option value="Diciembre">Diciembre</option>
+                          </select>
+                  </div>
+                  <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder="Año"><!--Día-->
+                  </div>
+
+                </div>
+              </td><!--AÑO DE NACIMIENTO-->
+                
+           <td class="col-sm-2"> <select name="discapacidad">
+
+            <option value="35">Entre 0% y 35%</option>
+            <option value="65">Entre 35% y 65%</option>
+            <option value="100">Mayor de 65%</option>
+        </select></td><!--GRADO DISCAP-->
+
+
+        <td class="col-md-3">
+          <input name="java" type="checkbox" value="on"/> Tiene acreditada la necesidad de ayuda de terceros  </td><!--NECESIDADES-->       
+        <td>
+      <div class="col-md-7">
+        <div class="center">
+          <p>
+            </p><div class="input-group">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[4]">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </span>
+                <input type="text" name="quant[4]" class="form-control input-number" value="0" min="0" max="10">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[4]">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </span>
+            </div>
+          <p></p>
+          </div>
+
+      
+        </div>
+
+        </td> 
+        
+          </tr>
+
+
+
+
+          </tbody>
+        </table> 
+</div>
+</div>
+
+        <ul class="pager">
+          <li class="previous"><a href="./hijosyDescendientes.html">&larr; Anterior</a></li>
+          <li class="next"><a href="./trabajo.html">Siguiente &rarr;</a></li>
+        </ul>
+
+      </div>
+
+ 			<!-- Bootstrap core JavaScript ================================================== -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../assets/jquery.min.js"><\/script>')</script>
+        <script src="../dist/js/bootstrap.min.js"></script>
+        <script src="../assets/js/docs.min.js"></script>
+
+<script>
+//plugin bootstrap minus and plus
+//http://jsfiddle.net/laelitenetwork/puJ6G/
+$('.btn-number').click(function(e){
+    e.preventDefault();
+    
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='"+fieldName+"']");
+    var currentVal = parseInt(input.val());
+    if (!isNaN(currentVal)) {
+        if(type == 'minus') {
+            
+            if(currentVal > input.attr('min')) {
+                input.val(currentVal - 1).change();
+            } 
+            if(parseInt(input.val()) == input.attr('min')) {
+                $(this).attr('disabled', true);
+            }
+
+        } else if(type == 'plus') {
+
+            if(currentVal < input.attr('max')) {
+                input.val(currentVal + 1).change();
+            }
+            if(parseInt(input.val()) == input.attr('max')) {
+                $(this).attr('disabled', true);
+            }
+
+        }
+    } else {
+        input.val(0);
+    }
+});
+$('.input-number').focusin(function(){
+   $(this).data('oldValue', $(this).val());
+});
+$('.input-number').change(function() {
+    
+    minValue =  parseInt($(this).attr('min'));
+    maxValue =  parseInt($(this).attr('max'));
+    valueCurrent = parseInt($(this).val());
+    
+    name = $(this).attr('name');
+    if(valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the minimum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    if(valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the maximum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    
+    
+});
+
+$(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+
+</script>
+
+
+<script>$(document).ready(function(){
+$('[data-toggle="tooltip"]').tooltip(); 
+});</script>
+
+		</body>
+</html>

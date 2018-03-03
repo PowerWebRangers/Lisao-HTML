@@ -1,0 +1,551 @@
+|----------INICIO 1.CSS: CONCEPTOS BÁSICOS----------------|
+
+Definen la apariencia de una página web.
+Todas las páginas de un sitio pueden compartir la misma hoja de estilo 
+
+1-------Integración de estilos en una página--------------
+
+Fichero externo.css:
+
+2 maneras distintas:
+
+-Utilizando el elemento <link>.
+
+<link rel="stylesheet" type="text/css" href="./css/miHoja.css">
+
+-Con la etiqueta <style> y una regla @import que permite cargar distintas CSSs dependiendo del dispositivo.
+
+<style type="text/css" media="screen">
+    @import './css/miEstilo.css';    
+</style>
+
+1-------Integración de estilos en una página--------------
+
+2-------------Cascada de estilos--------------------------
+
+Una página puede incluir varias hojas de estilos. Los estilos se heredan. Cuando se establece una propiedad para un elemento todos sus descendientes heredan de forma automática dicha propiedad.
+
+Puede haber problemas en el caso de que el estilo de un elemento se defina en dos reglas de la misma o distintas hojas de estilo (una regla que diga que el texto del elem está en verde y en otro en rojo). En ese caso, se aplica el más específico:
+
+-El selector con mayor prioridad: cuanto más específico, mayor prioridad.
+
+-A igualdad de selectores, el último estilo definido. Si la regla viene de dos hojas de estilo externas, influye el orden en el que se incluyen las CSS. Lo mismo para el caso de HTML: el estilo que se define en el elemento tiene más prioridad que el estilo que se define en la cabecera del HTML ( > prioridad que el de los ficheros externos).
+
+El proceso para resolver la regla es:
+
+1-Buscar todas las declaraciones aplicables a un elemento.
+
+2-Si no existen reglas, se usa el valor heredado, si no hay valor heredado se usa el valor por defecto.
+
+3-Si existen reglas, se aplica la de mayor peso en base a:
+
+	-Se asigna un peso según su origen(hoja de estilos del autor, usuario o navegador).
+
+	-Si un atributo tiene la palabra !important se le da mayor prioridad.
+
+	-Mayor prioridad a selectores más específicos.
+
+	-Si después de aplicar lo anterior existen dos o más reglas con la misma prioridad, se aplica la que se indicó en último lugar.
+
+2-------------Cascada de estilos--------------------------
+
+
+3----------Anatomía de una hoja de estilos----------------
+
+Una hoja de estilos define una o más reglas que se aplicará a los elementos que cumplen dicha regla. Las reglas se componen de dos partes:
+
+1-Selector: indica a qué elementos se va a aplicar la regla. Pueden escribirse varios selectores para la misma regla separados por comas.	
+
+-Lista de declaraciones: los estilos que se van a aplicar a los elementos que cumplen la regla. Son pares [propiedad:valor] separados por ;
+
+Ejemplo:
+
+//Hemos definido una regla para todos los elementos <p> de un HTML
+
+p 	//Selector. Esta regla se aplica a p
+{
+	//Lista de declaraciones
+	color: red; //Rojo
+	font-family:Verdana; //Verdana
+	text-align:center; //Alineación de párrafo centrada
+}
+
+Comentarios entre /* y */ y directivas at con @ para el parser.
+Parser: responsable de revisar las reglas antes de aplicarlas.
+
+3----------Anatomía de una hoja de estilos----------------
+
+4-----------------------DOM-------------------------------
+
+DOM: representación estructurada en forma de árbol de los elementos escritos en un documento HTML. Es utilizado por las CSS para cambiar el estilo de los elementos contenidos en él. El DOM define una API que nos permitirá modificar el contenido de los elementos una vez cargado en el navegador usando JavaScript.
+
+Ejemplo:
+
+
+<html>
+    <head>
+        <title>My title</title>
+    </head>
+    <body>
+        <a href="...">My Link</a>
+        <h1>My header</h1>
+    </body>
+</html>
+
+Existen distintas relaciones entre los elementos:
+
+-Descendientes: son todos los elementos contenidos por un elemento. Head,body,a y h1 son descendientes de html
+
+-Hijos directos: descendientes de primer nivel. head es hijo de html y h1 es hijo de body.
+
+-Hermanos/siblings: Descendientes de padre común. h1 y a son hermanos.
+
+4-----------------------DOM-------------------------------
+
+|----------FIN 1.CSS: CONCEPTOS BÁSICOS-------------------|
+
+
+|---------------------INICIO 2.SELECTORES-----------------|
+
+1-----------------Selector universal----------------------- 
+
+Se define con * y se aplica a todos los elementos de la página:
+
+Ejemplo:
+
+* {
+	margin: 0;
+	font-family: Verdana;
+}
+
+1-----------------Selector universal----------------------- 
+
+2--------------Selector de etiqueta HTML-------------------
+
+Indica el estilo que se va a dar a un elemento o etiqueta concreto.
+
+//Todas las etiquetas [h1-h5] tiene el tamaño de fuente grande
+
+h1, h2, h3, h4, h5 { // En CSS quitamos el <> de la etiqueta
+	font-size: large;
+}
+
+2--------------Selector de etiqueta HTML-------------------
+
+3------------------Selector de clase-----------------------
+
+Podemos añadir a los elementos HTML un atributo class que indica las clases a las que pertenece el elemento.  Podemos hacer uso de este atributo desde las CSS, aplicando una regla a todos los elementos que sean de una determinada clase:
+
+Ejemplo 1: 
+
+//Se pondrá en azul todos los elementos que sean de la clase cabecera. Es equivalente a *.cabecera (todos los elem de la pag de la clase cabecera, I guess)
+
+.cabecera{
+	color:blue;
+} 
+
+Ejemplo 2:
+
+//Establece una alineación de párrafo a todos los elementos <h1> que sean de la clase cabecera.
+h1.cabecera {
+	text-align:center;
+}
+
+//OJO:No puede haber ningún espacio entre los nombres y el punto ya que ese espacio tiene significado. Ahora lo vemos.
+
+3------------------Selector de clase-----------------------
+
+4----------------Selectores descendentes-------------------
+
+Permiten seleccionar elementos contenidos dentro de otros de acuerdo a la estructura en árbol del DOM. Si separamos dos selectores por un espacio en blanco entonces estaremos aplicando la regla a todos los descendientes del primer selector:
+
+Ejemplo 3:
+
+//Se aplica a todos los elementos <p> que son descendientes de un elemento <section> (descendientes de cualquier nivel)
+section p{
+	text-font: Verdada;
+}
+
+Podemos mezclar esto con los selectores de clase:
+
+Ejemplo 4: 
+
+//Se escribirán en rojo cualquier elemento de la clase error que sea descendiente de un elemento <section>
+section .error {
+	color:red;
+}
+
+
+Si en lugar de aplicarlo a cualquier descendiente de un elemento lo queremos aplicar solo a sus hijos entonces usaremos el simbolo >
+
+Ejemplo 5:
+
+//La fuente Verdana solo se usa en los elementos <p> que son descendientes directos de <section>
+section>p {
+	text-font: Verdada;
+}
+
+Si queremos aplicarlo solo si un elemento es el primer hijo de su padre, necesitamos usar la pseudo clase first-child
+
+Ejemplo 6:
+
+//Solo el primer elemento <li> de una lista de viñetas (<ul>) aparecerá en color verde
+ul li:first-child {
+    color: green;
+}
+
+Existen otras clases para seleccionar a un hermano en concreto de entre todos los hijos de un elemento:
+
+:nth-child(n)-> representa el n-ésimo hermano. Permite incluir una forma más compleja como: nth-child(2n+1) que representa los hijos que ocupan posiciones impares(p.e hacer que las filas impares de una tabla tengan distinto color de fondo).
+
+nth-last-child(n)-> lo mismo pero contando desde el final
+
+4----------------Selectores descendentes-------------------
+
+5---------------------Pseudo clases------------------------
+
+Podemos usar pseudo clases para especificar elementos que tienen unas determinadas propiedades.
+
+Pseudo clases: son como clases "virtuales" ya que no se especifican en el HTML pero representan estados en los que se puede encontrar un elemento mientras se visualiza en el navegador-
+
+Las más comunes son las pseudo clases dinámicas, que indican el estado de los elementos cuando el usuario interactúa con ellos:
+
+:hover : Se utiliza para establecer el estilo cuando el usuario coloca el ratón sobre el elemento.
+
+:active : ... cuando el usuario pincha sobre el elemento o mantiene el botón del ratón pulsado sobre él.
+
+:focus : ... cuando el elemento tiene el foco.
+
+
+También son muy típicos las pseudo clases relacionadas con los enlaces:
+
+:link : Establece el estilo del enlace cuando aún no se ha visitado o cuando el usuario aún no lo ha pulsado.
+
+:hover: ya explicado.
+
+:active: establece el estilo cuando el usuario pincha sobre el enlace.
+
+:visited: Establece el estilo de un enlace ya visitado por el usuario.
+
+Ejemplo: 
+
+//Los enlaces de mi documento aparecen sin subrayar y en verde
+a:link { 
+    color: green;
+    text-decoration: none;
+}
+
+//Una vez visitados, se muestran en rojo
+a:visited { 
+    color: red; 
+}
+
+//Al situar el ratón sobre ellos pasan a azul
+a:hover {
+    color: blue;
+}
+
+5---------------------Pseudo clases------------------------
+
+6--------------Selectores de elementos adyacentes----------
+
+Hacen referencia a elementos que aparecen justo después de otros elementos.
+
+Ejemplo:
+
+//Este selector indenta el primer párrafo que aparece justo después de un encabezado <h1>.
+h1 + p {
+    text-indent: 1.5em;
+}
+
+6--------------Selectores de elementos adyacentes----------
+
+7-----------------Selectores de atributos------------------
+
+Se utilizan para seleccionar elementos en función de sus atributos. Hay 4 tipos:
+
+-[atributo]: elementos que tienen definido el atributo llamado "atributo", independientemente de su valor.
+
+-[atributo=valor]: elem que tienen un atributo con el valor especificado.
+
+-[atributo~=valor]: elem que tienen un atrb y al menos 1 de los valores del atributo es el valor especificado.
+
+-[atributo|=valor]: .. cuyo valor es una serie de palabras separadas con guiones, pero que comienza con valor.
+
+Ejemplo: [lang|="es"] -> selecciona todos los elementos que empiezan por "es" como "es" "es-ES" "es-AR"
+
+7-----------------Selectores de atributos------------------
+
+8----------------------Identificadores---------------------
+
+Permiten aplicar un estilo único al único elem de la pag que tiene un determinado id (especificado como id)
+El selector se especifica con # y el nombre del id. Ojo con los espacios en blanco, porque varía. No se debe usar demasiado.
+
+Ejemplo:
+
+//Ponemos en color de fondo amarillo el párrafo "destacado"
+p#destacado{
+	background-color:yellow;
+}
+
+8----------------------Identificadores---------------------
+
+|---------------------FIN 2.SELECTORES--------------------|
+
+
+|---------INICIO 3.PRINCIPALES LISTAS DE DECLARACIONES----|
+
+1--------------------Unidades de medida--------------------
+
+Algunas propiedades aceptan como valor una unidad de medida.
+
+-Porcentaje: Establece el tamaño en un % respecto al valor heredado.
+
+Ejemplo: font-size: 80%
+
+-em: Escala el tamaño de acuerdo al tamaño de la fuente actual(o de la fuente heredada, si no se ha definido un tamaño de fuente). 
+
+Ejemplo: font-size: 2em //Escala al doble del tamaño de la fuente actual(heredada)
+
+-ex: Establece el tamaño de acuerdo a la altura de la letra x de la fuente actual(o heredada). //No importante
+
+Ejemplo: line-height: 2ex
+
+-pt: Establece el tamaño en puntos(1/72 de una pulgada)
+//No importante
+
+-px: Establece el tamaño en pixeles.
+
+-cm,mm, in: Establece el tam en cm,mm o pulgadas.
+
+Si escribimos un valor 0 no es necesario poner unidades (?????)
+
+Recomendable usar: porcentaje, em y ex para que dependa del sitio donde vera el usuario la pag. 
+
+Sirve para crear cuadrículas fluidas, importante para el diseño responsive (diseño de sitios que se adaptan al medio en el que se ven->navegador, tablet,movil..)
+
+1--------------------Unidades de medida--------------------
+
+2-------------------------Colores--------------------------
+
+Se definen en RGB (0-255 / % / hexadecimal).
+
+Formas de definir un color:
+
+color: red //Color predefinido
+
+color: #ff0000 //hexadecimal
+
+color: rgb(255,0,0)
+
+color: rgb(100%,0%,0%) //porcentajes
+
+color: transparent //el transparente también es un color
+
+2-------------------------Colores--------------------------
+
+3-----------------Propiedades de texto---------------------
+
+Principales propiedades:
+
+color: indica el color de la fuente
+
+font-family: indica la fuente. Si se especifican varias
+			 coge la primera
+
+font-size
+
+font-style: cursiva: normal, italic....
+
+font-weight: negrita, delgada: normal, bold, bolder, lighter o un num entre 100 y 900 (400:normal, 700:bold)
+
+text-decoration: subrayados y tachados: none,underline
+				 line-through, overline
+
+line-height: interlineado: normal o u de medida
+
+text-align: alineación horizontal en un elem que lo contiene: left, right, center, justify
+
+text-indent: añadir identación a un bloque de texto (u de 			   medida)
+
+Se pueden definir las prop juntas o separadas
+
+Ejemplo:
+
+p{ font: bold 9px Charcoal} //Mirar orden de propiedades
+
+Orden: Sacado de (http://www.comocreartuweb.com/curso-de-estilos-css/estilos-predeterminados/propiedades-css/fuentes-y-textos.html)
+
+.selector { font : ValordeStyle ValordeWeight ValordeSize ValoresdeFamily ; }
+
+.otrotextomas { font: italic bolder 15px Arial,Verdana,sans-serif ; }
+
+3-----------------Propiedades de texto---------------------
+
+4------------------Propiedades de listas-------------------
+
+Principales propiedades para las listas:
+
+-list-style-type: representa el tipo de marcador que se usa en una lista.
+
+Valores predefinidos en : https://www.w3schools.com/cssref/pr_list-style-type.asp
+
+-list-style-position: indica si el marcador se incluye dentro del texto del elemento o fuera (lo normal): inside, outside
+
+-list-style-image: permite añadir una imagen como marcador: none o url("URL de la imagen")
+
+Forma compacta:
+
+ul { list-style:square url("sqpurple.gif"); } 
+
+4------------------Propiedades de listas-------------------
+
+5----------------------Otras propiedades-------------------
+
+-visibility: indica si el elem está visible o no:
+			 visible, hidden, collapse(para elem de tablas para no ver filas o columnas)
+
+-display: cambia el tipo de caja del elem: block,inline 
+		  o none. Esto afecta a la forma en la que se posiciona un elem dentro de la pag.
+
+5----------------------Otras propiedades-------------------
+
+|---------FIN 3.PRINCIPALES LISTAS DE DECLARACIONES-------|
+
+
+|----------INICIO 4.POSICIONAMIENTO DE ELEMENTOS----------|
+
+1---------------------Elementos y cajas--------------------
+
+Todos los elem se representan como una caja rectangular que encierra el contenido de dicho elem. Existen dos tipos de elem segun su caja:
+
+-Elem de bloque: empiezan en una nueva linea y ocupan todo el espacio disponible hasta el final
+
+(address, blockquote, center, dir, div, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, menu, noframes, noscript, ol, p, pre, table, ul)
+
+-Elem en linea o inline: solo ocupan el espacio necesario para mostrar sus contenidos. Se pueden insertar en elem de bloque y de linea.
+
+(a, abbr, acronym, b, basefont, bdo, big, br, cite, code, dfn, em, font, i, img, input, kbd, label, q, s, samp, select, small, span, strike, strong, sub, sup, textarea, tt, u, var)
+
+Para cada elem se genera una caja con todas las cajas de elem contenidos en la primera. <body> es el elem raiz, contiene todas las cajas de todos los demas elementos
+
+1---------------------Elementos y cajas--------------------
+
+2-----------------Dimensiones de las cajas-----------------
+
+La caja creada divide su tamaño global en varias dimensiones, configurables con las css.
+
+Las propiedades de las dimensiones de una caja(excepto las de contenido) se expresan dando valores al top, bottom, left y right y se pueden expresar así:
+
+-Con un único valor: se aplica a todos los espaciados
+
+-Con dos valores: el primero se aplica al top y bottom y el segundo al left y right.
+
+-Con 4 valores: uno para cada espaciado (sentido de las agujas del reloj)
+
+-De manera individual extendida: p.e padding-ñeft fija el espaciado izquierdo del relleno.
+
+Para modificar estas dimensiones(u de medida) usamos:
+
+-width y height: dim del contenido
+
+-padding: define las dim del relleno entre el contenido y el borde. Background se aplica a las dim del contenido + el relleno.
+
+-border-width: define el grosor de la región del borde
+
+-margin: define el margen de la caja, sección transparente que separa una caja de otras.
+
+2-----------------Dimensiones de las cajas-----------------
+
+3-----------Propiedades de los bordes de la caja-----------
+
+-Estilo del borde: border-style. (none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset)
+
+-Anchura del borde: border-width
+
+-Color del borde: border-color (rgb)
+
+Podemos definir el estilo de cada borde con border-top-style y el resto. Podemos configurar un borde de forma compacta con:
+
+border: ancho  estilo  color;
+
+Extra: nuevos estilos (Mirar info si queremos usarlos)
+
+Bordes de esquinas redondeadas: border-radius
+
+Sombras: box-shadow
+
+Imágenes para definir los bordes: border-image
+
+Estas propiedades son soportadas solo por algunos navegadores y hay que definir la propiedad específica para el navegador de destino(polyfill).
+
+3-----------Propiedades de los bordes de la caja-----------
+
+4----------------Background de una caja--------------------
+
+fondo: region compuesta por el contenido y relleno sin tener en cuenta el borde.
+
+Propiedades:
+
+-background: especifica las características del fondo de un elem. Forma compacta de las siguientes.
+
+-background-color: su valor es un color
+
+-background-iamge: su valor es url("URL de la imagen") o none.
+
+-background-size: especifica el tam de la imagen de fondo. 1 o 2 unidades de medida(ancho/alto), cover(la imgen se ensancha hasta cubrir todo, puede cortarse) o contain(se escala la img para que su alto/ancho quepa en el área)
+
+-background-repeat:indica como repetir la iamgen para ocupar todo. repeat(ambas dir),repeat-x(x),no-repeat
+
+-background-position
+
+-background-attachment: especifica que ocurre con la imagen cuando se hace scroll en la pag: fixed o scroll. Puede usarse la técnica del parallax scrolling (https://www.awwwards.com/20-best-websites-with-parallax-scrolling-of-2013.html  --> MOLA MUCHOOOO)
+
+4----------------Background de una caja--------------------
+
+5-----------------Posicionamiento en CSS-------------------
+
+Las cajas por defecto se colocan empujandolas hacia la izquierdA y arriba según si son de bloque o inline. Podemos controlar ese flujo haciendo que las cajas se posicionen según los siguientes modos de acuerdo a "position":
+
+-Estática(position: static): modo de "flujo normal".
+
+-Relativa(position: relative): Se desplaza de su pos usando propiedades top, right, bottom y left. Estas dimensiones indican el espaciado a dejar a cada lado segun la pos original de la caja. El esto no quedan afectadas por lo que la reservan espacio.
+
+-Absoluta(position: absolute): Elimina la caja del flujo normal y coloca la caja en una pos fija de manera absoluta respecto a su caja contenedora. Se usan las mismas prop que en relativa. Puede superponerse a otros elem.
+
+-Fija:(position: fixed): Igual que el posicionamiento absoluto, pero especificando la pos respecto a la ventana. La caja mantiene su pos y no se mueve cuando se usan las barras de desplazamiento.
+
+-Flotante(position: float): la caja se desplaza hacia un lado (float: left / rigth) llevándola a uno de los extremos de la caja contenedora o hasta la primera caja flotante que se encuentre en esa dirección. Puede superponerse a otras cajas no flotantes.
+
+
+En el último caso la caja deja de pertenecer al flujo normal de la página, por lo que el resto de cajas ocupan el lugar que ha dejado. Podemos hacer que un elemento no se vea afectado por lo que hagan las cajas flotantes a su alrededor definiendo la propiedad clear que fuerza a que el elemento se muestre debajo de cualquier caja flotante de un determinado tipo (clear: left o clear: right) o de cualquier caja flotante (clear: both).
+
+5-----------------Posicionamiento en CSS-------------------
+
+|----------FIN 4.POSICIONAMIENTO DE ELEMENTOS-------------|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

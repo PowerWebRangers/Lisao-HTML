@@ -1,0 +1,649 @@
+Hay una herramienta para probar online http://codepen.io/ -> new PeN
+
+Permite describir el contenido de una página, inclutendo texto y otros elementos
+
+HTML es un lenguaje de marcas. Contiene texto y etiquetas
+La idea básica es estructurar el contenido mediante marcas.
+
+1. Introduccion a HTML
+	1.1 Etiquetas y atributos
+		- HTML suele abrir y cerrar las etiquetas:
+			<marca>...</marca>
+			<h1>Introducción</h1>
+			<p>Esto es un párrafo</p>
+
+		- Pero a veces no se emparejan. Estas etiquetas terminan con una barra inclinada:
+			<hr />
+			<link ... />
+
+		- Hay etiquetas que no necesitan una etiqueta de cierre
+			<img ...>
+			<p>
+		- Lo que hay entre las etiquetas se denomina elemento. Es normal que unos
+		elementos estén contenidos en otros elementos.
+
+		- Un elemento puede tener una etiqueta con atributos. Especifica algunas caracteristicas,
+	  		y se espeficican de la siguiente manera:
+		  	<etiqueta atributo="valor"> texto </etiqueta>
+		  	<a href="http://www.ucm.es/">Universidad Complutense Madrid</a> HIPERENLACE
+			<img src="smiley.gif" alt="Smiley face" height="42" width="42"> IMAGEN
+
+		- Atributos genericos que se pueden asociar a cualquier etiqueta:
+			id = "texto": asigna un identificador único al elemento
+			class = "texto": asocia una clase CSS que define un conjunto de estilos de formato para el elemento.
+			style = "texto": establece directemente los estilos de CSS del elemento.(NO USAR)
+			title = "texto": Asigna un titulo a un elemento. 
+				Es lo que aparece cuando el usuario pasa por encima el ratón.
+
+	1.2. Comentarios en el documento HTML
+		- Los comentarios pueden estar insertados en cualquier lugar de la página web
+			<!‐‐ texto del comentario (una o más líneas ‐‐>
+
+	1.3. Caracteres Especiales
+		- Si vamos a utilizar carecteres como acentos, ñ..., lo mejor es declarar el uso de caracteres UTF-8,
+			estos caracteres se pueden escribir utilizando simbolos universales. Comienzan por & y terminan en ;.
+			También son necesarios para escribir aquellos simbolos que usan HTML para definir etiquetas y elementos
+				&lt;:<
+				&gt;:>
+				&amp;:&
+				&quot;:"
+				&nbsp;:(espacio blanco)
+				&apos;:'
+				&ndash;:-
+				256 carecteres universales más https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
+
+	1.4. Estructura de un documento HTML
+	<html>
+		<head>
+		</head>
+		<body>
+		</body>
+	</html>
+
+	1.5. La cabecera HTML
+
+	----------------------------------------------------------------------------
+	-<title> indica el título del documento. Es una etiqueta obligatoria y solo aparece una vez en el documentos. Aparece en la pestaña del navegador
+
+	<html>
+	  <head>
+	    <title>El titulo de mi primer sitio</title>
+	  </head>
+	  <body>
+	    Mi primer sitio web
+	  </body>
+	</html>
+
+	No utiliza acentos porque pueden aparecer símbolos indebidos
+
+	----------------------------------------------------------------------------
+
+	-<link/> Enlaces a otros archivos que queremos que se carguen junto con la página web. .css y .js
+
+	<link rel="stylesheet" type="text/css" href="/css/formato.css" />
+
+	Atributos:
+	 	-href indica el documento que estamos cargando. Puede hacer referencia a:
+	 		*URL absoluta(http://...)
+	 		*Ruta relativa al archivo desde el que se referencia
+	 	-type el tipo de documento
+	 	-rel relación entre ambos documentos.
+
+	----------------------------------------------------------------------------
+
+	-<meta /> Proporcionan metainformación sobre el documento, es decir, información
+	procesable automáticamente por programas que analicen la página.
+	Atributos:
+		-name define un tipo de metadato
+		-content define el valor
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<meta name="author" content="Guillermo Jiménez" /> 
+	<meta name="keywords" content="sistemas web, html" />
+	<meta name="description" content="Curso sobre diseño de sitios web" />
+
+	Metadatos más usados:
+		-charset indica la codificación en la que se ha escrito el documento de 
+		la página. Es importante para poder ver acentos correctamente.
+		-author indica el autor de la página
+		-robots hace referencia
+		-keywords y description hacen referencia al contenido de la página y suelen
+		ser usados por los motores de búsqueda
+		-viewport relacionado con el diseño para dispositivos móviles
+
+	----------------------------------------------------------------------------
+
+	-<script> Permite incluir código ejecutable. Por defecto JS. Si no se puede 
+	procesar, lo especificamos con <noscript>
+
+	<script type="text/javascript">
+	  //Código JavaScript
+	</script>
+	<noscript>
+	  <p>Esta página requiere el uso de JavaScript. Por favor compruebe la configuración de su navegador.</p> 
+	</noscript>
+
+	También puede referirse a un fichero externo:
+	<script type="text/javascript"    
+	    src="http://www.ejemplo.com/js/miscript.js">
+	</script>
+
+	----------------------------------------------------------------------------
+
+	-<style> Permite definir propiedades de estilos que se aplicarán a lo largo
+	del documento. Este elemento generalmente se indica en la hoja de estilo. 
+	Sintaxis detalla en tema de CSS
+
+	<style type="text/css">
+	p { font-family: Arial;
+	    font-size: 10pt;
+	    color: rgb(0,0,128);
+	    text-indent: 15px; 
+	    text-align: justify; 
+	    margin-left: 10px }
+	</style>
+	<style type="text/css" href="/css/miEstilo.css">
+
+
+	----------------------------------------------------------------------------
+
+1.6 El cuerpo del documento HTML
+
++----------------------------+
+| Etiquetas de bloque		 |
++----------------------------+
+
+Elemento <p>:
+------------
+Contiene el texto de un párrafo, independientemente de los saltos de linea y espacios en blanco adicionales que metamos. 
+
+Ejemplo: <p>Esto es un párrafo. Aunque escriba       varios espacios
+
+y saltos de línea saldrá todo de manera compacta</p>
+<p align="right">Alineado a la derecha</p>
+
+Acepta caracteristicas de estilo como <p=align = "center">, que centraría el texto pero no es aconsejable.
+
+
+Elemento <pre>: 
+--------------
+Contiene un párrado con texto preformateado, teniendo en cuenta espacios en blanco y líneas en blanco. Se suele utlizar para escribir código fuente.
+
+<p>En JavaScript podemos definir una función de la siguiente forma:</p>
+<pre>
+var nombre = function() {
+  // Código de la función  
+};
+</pre>
+
+
+Elementos <h1> ... <h6>:
+-----------------------
+Definen encabezados de secciones de nivel 1 a 6.
+
+Ejemplo: <h1> Sección 1 </h1>
+		 <h2> Sección 1.1 </h2>
+		 	<p> Texto normal </p>
+		 <h3> Sección 1.1.1 </h3>		...Y así
+		 	<p> Texto normal </p>
+
+
+Elemento <address>:
+------------------
+Contiene información de contacto del autor de la página.
+
+Ejemplo: <address> Autor: El puto Notas <br/> Última modificación: 03/11/2017 </address>
+
+
++----------------------------+
+|    Etiquetas inline		 |
++----------------------------+
+
+Son las que se utilizan generalmente dentro de otros párrafos para modificar su contenido, como <b>, <i>, pero más tochas.
+
+
+Elementos de espacio:
+--------------------
+Son elementos que sirven para romper líneas y añadir espacios en blanco.
+* <br/>: Añade un salto de línea sin cambiar de párrafo (es decir, sin dejar espacio entre medias)
+
+* &nbsp; Es un espacio en blanco por lo que fuerza al navegador a poner los espacios que se ignorarían, pero no te ralles que es mucho mejor usar el   <pre> que se explicó arriba.
+
+
+Elementos de importancia en el texto:
+------------------------
+Para marcar la importancia de unas palabras dentro del texto.
+
+* <em>: resalta una porción de texto, dandole énfasis en cursiva. Existe <i>, si, pero es mejor esta mierda.
+
+* <strong>: Más enfasis que <em>, siendo énfasis en negrita. Igual, existe <b> pero es mejor esto.
+
+* Si queremos meter código en medio del párrafo, metemos el elemento <code>
+<p>En C, el punto de entrada de ejecución es la función <code>int main()</code>,
+ que puede tener parámetros</p>
+
+Elementos de edición de texto:
+--------------------
+Se usan para mostrar que se ha modificado una página con respecto a una versión anterior.
+
+* <del>: muestra que se elimina un texto (aparece tachado).
+
+* <ins>: muestra que se ha insertado un texto (aparece subrayado).
+
+<p>La nota final es <del>suspenso</del> <ins datetime="20130625">aprobado</ins>.</p> 
+
++----------------------------+
+|  Etiquetas de contenedores |
+|		  de Texto           |
++----------------------------+
+
+Sirven para organizar la estructura de la página
+
+Citas:
+-----
+* <blockquote>: se usa para meter una cita larga, con varios párrafos u otras etiquetas. El texto se suele mostrar con márgenes a izquierda y derecha, aunque lo más conveniente es definir el formato en la hoja de estilo. Se puede indicar el atributo
+de la cita con cite
+
+Ejemplo:
+	<blockquote cite="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+	<p>Elegida la mejor canción de los últimos tiempos, el cantante se prepara para su mayor gira hasta la fecha </p>
+	<p>Y bla bla bla...</p>
+	</blockquote>
+
+Agrupaciones:
+------------
+* <div>: Se usa para agrupar diversos elementos de bloque (párrafos, listas, tablas) y dar la estructura de formato de la página. Una división no puede insetarse dentro de etiquetas inline o de bloques de texto (párrafos, encabezados...) pero SÍ dentro de otra tabla.
+
+* <span>: Crea un grupo de elementos en línea seguidos dentro de un mismo bloque. Para hacer varias palabras seguidas dentro de un párrafo.
+
+Se da formato a las agrupaciones div con las hojas de estilos y los atributos genéricos class e id. Se usan las hojas de estilo incluso para definir la posicion de los distintos elementos.
+
+<div id="cuentoCaperucita">
+    <div class="titulo">Caperucita Roja</div>
+    <div class="cuento">
+        <p>Andaba sola <span class="rojo">Caperucita Roja</span>    
+        y se encontró <span class="feroz">al lobo feroz</span></p>
+    </div>
+</div>
+
+Elementos de estructura semántica:
+--------------------
+Similares a <div> pero vienen con el significado relacionado con la estructura de forma explícita.
+
+
+			+---------------------------------+
+			|			<header>			  |		
+			+---------------------------------+	
+			|			 <nav>				  |		
+			+---------------------------------+
+			|	<section>		  |			  |	
+			|---------------------+	<aside>   |
+			|	<article>		  |			  |	
+			+---------------------------------+
+			|			<footer>			  |
+			+---------------------------------+
+			
+<Header>: Representa la cabecera de un documento o sección. Puede haber más de uno.
+
+<Footer>: Cierre del documento. Suele contener info sobre el autor, copyright, etc
+
+<nav>: Representa la sección que contiene los enlaces de navegacion de la web
+
+<section>: Define una sección del documento.
+
+<article>: Representa un contenido independiente y autocontenido, en plan noticias, un post de un blog...
+
+<aside>: Define contenido como una barra lateral, por lo que suele estar relacionado con el elemento que lo contiene.
+
+OTROS:
+
+<figure> y <figcaption>: Definen un elemento independiente, como una imagen o un trozo de código, cuyo contenido está relacionado con el elemento que lo contiene pero su posición es independiente del mismo.
+La etiqueta <figcaption> es el título de este elemento y se suele poner como primer o último elemento del mismo.
+
+<details>: Representa detalles adicionales que el usuario puede ocultar.
+
+
+Imagenes:
+--------
+
+Utilizar archivos con calidad suficientes ya que pierden calidad a la hora de 
+cambiar el tamaño de la imagen.
+
+Formatos más recomendables:
+
+.png : Es un formato de compresión sin pérdida que soporta transparencias. Por este motivo se usa imágenes con pocos colores donde los detalles pequeños son importantes; ej.: capturas de pantalla.
+.jpg: Es un formato de compresión con pérdida que no soporta transparencias. Se usa para imágenes con muchos colores donde los detalles finos son menos salientes; ej.: fotos
+.gif: Es un formato gráfico sin pérdida, para imágenes de hasta 256 colores limitados por una paleta de colores. Además soporta transparencias y animaciones
+
+Convertir con photoshop o aplicaciones específicas blablabla
+
+Insertar imagenes: <img src = "blablabla.FisicaMola.ucm.es.gif" alt= "aaaa" width = "420px" height = "1337px"/>
+
+Dentro de esa etiqueta hay varios elementos. 
+	-Alt: descripción textual que se usa para navegadores en "modo texto" mientas se carga la imagen.
+
+	-width y height modifican el tamaño de la imagen.
+
+
+Enlaces y Anclas:
+----------------
+Los enlaces o hipervinculos usan la etiqueta <a href> y se componen de tres partes:
+	
+	*Marcador o anclaje de origen: Conocido como enlace, pulsar sobre esto hace que nos dirijamos a la posición en la que se encuentra el destino del enlace.
+
+	*Título del enlace: Es el texto que se sitúa en el marcador de origen(enlace) y aclara hacia donde vas.
+
+	*Marcador o anclaje de destino: Es el destino del enlace, el punto al que se saltará al hacer uso del hipervínculo.
+
+
+	- Añadir un enlace: <a href="destino">Título del enlace</a>
+			* Destino puede ser una dirección de web, ejemplo http://www.ucm.es, o ua dirección relativa como por ejemplo foros/general.php
+
+	-Pueden contener imagenes en el "Titulo del enlace"
+
+		<a href="http://www.ucm.es/"> <img src="http://skrrrrr.gif" alt="aaaa"/> </a>
+
+	-Añadir marcadores destino: <a name ="destino"/> 
+	*Si queremos crear un enlace pero queremos ir a un párrafo en concreto, especificamos el "parrafo" con #.
+	a href="#apartado-2">Ir al apartado 2 de esta misma página</a>
+	<a href="pagina.html#apartado-2">Ir al apartado 2 del documento pagina.html</a>
+
++----------------------------+
+|  		   LISTAS            |
++----------------------------+
+
+Tres tipos de listas:
+
+	*Listas numeradas: Se delimitan por las etiquetas <ol>...</ol> y sirven para crear listas con números. NYMEROS
+
+	*Listas con viñetas: Se delimita con las etiquetas <ul> ... </ul> y srven para crear listas que utilizan símbolos o viñetas. PUNTITOS
+
+	*Listas de definiciones: Se delimitan por las etiquetas <dl>...</dl> y sirven para crear definiciones de términos. DEFINICIONES
+
+Para delimitar cada uno de los elementos de las listas <ol> y <ul>, se usan las etiquetas <li>..</li>
+
+Para delimitar las listas de <dl> (definiciones) usan dos tipos de etiquetas distintas:
+
+	* <dt> ... </dt> Delimitan los términos.
+	* <dd> ... </dd> Delimitan las definiciones.
+
+* Importante:   las listas se pueden anidar unas dentro de otras *
+
+Ejemplo de listas:
+
+				<p>Los planetas, por orden de proximidad al Sol, son:</p>
+				<ol>
+				    <li>Mercurio</li>
+				    <li>Venus</li>
+				    <li>Tierra</li>
+				    <li>...</li>
+				</ol>
+
+				<p>Los cuatro puntos cardinales principales son:</p>
+				<ul>
+				    <li>Norte</li>
+				    <li>Sur</li>
+				    <li>Este</li>
+				    <li>Oeste</li>
+				</ul>
+
+				<p>Una célula animal se compone de las siguientes partes:</p>
+				<dl>
+				    <dt>Membrana</dt>
+				    <dd>Es el límite externo de la célula.</dd>
+				    <dt>Citoplasma</dt>
+				    <dd>Es el volumen de la célula entre la membrana y el núcleo.</dd>
+				    <dt>Núcleo</dt>
+				    <dd>Es el orgánulo membranoso que se encuentra en el centro de la célula.</dd>
+				</dl>
+
+	<ol>
+	  <li>Primer elemento </li>
+	  <li>Segundo elemento </li>
+	  <ul>
+	    <li>Elemento de lista desordenada anidada</li>
+	  </ul>
+	  <li>Definiciones: </li>
+	  <dl>
+	    <dt>Término</dt>
+	    <dd>Definición del término 1</dd> 
+	  </dl>
+	</ol>
+
+
+
+
++----------------------------+
+|  		  Archivos			 |
+| 		 Multimedia          |
++----------------------------+
+
+* VIDEO:  <video> ... </video>
+* AUDIO:  <audio> ... </audio>
+
+En ambos podemos incluir usando la etiqueta <src ="..."> o múltiples fuentes utilizando elementos <source>, aunque es este último caso solamente se reproducirá el primer archivo que el pc pueda abrir. 
+Dentro del elemento se suele incluir un texto que aparecerá en caso de no poder reproducir ninguna de las fuentes
+
+Tiene los atributos de las imagenes, y los de ancho y alto, y además incluye otros:
+
+	
+	*Autoplay: Se comienza a ejecutar en el mismo momento que carga la página.
+
+	*Controls: Permite añadir controles de reproducción.
+
+	*Loop: Reproduce el video en loop
+
+	<video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls autoplay>
+	  Tu navegador no implementa el elemento <code>video</code>.
+	</video>
+
+	SOPORTES DE LOS DISTINTOS NAVEGADORES:
+	------------------------------------
+
+		*Chrome
+		    Sonido: MP3, WAV, OGG 
+
+		    Video: H.264+AAC, VP8+Vorbis, OGG
+		*Firefox
+		    Sonido: WAV, OGG (MP3 sólo en Windows) 
+
+		    Video: VP8+Vorbis, OGG (H.264 sólo en Windows)
+		*Internet Explorer
+		    Sonido: MP3 
+
+		    Video: H.264+AAC
+		*Safari
+		    Sonido: MP3 
+
+		    Video: H.264+AAC
+
+
++----------------------------+
+|  		   Tablas            |
++----------------------------+
+
+Se define con el elemento <table>, y todos sus atributos estéticos se hacen en las hojas de estilo (CSS)
+
+Dentro del elemento <table> se definen las filas con <tr>, y dentro de cada fila se define cada una de las cesdas con la etiqueta <td>.
+
+Dentro del <td> se puede poner cualquier otro elemento, inclusive otra tabla (pero generalmente no quieres hacer esa burrada).
+
+Ejemplo:
+		<table>
+			<tr>
+			  <td><strong>Curso</strong></td>
+			  <td><strong>Horas</strong></td>
+			  <td><strong>Horario</strong></td>
+			</tr>
+
+			<tr>
+ 				 <td>CSS</td>
+ 				 <td>20</td>
+  				<td>16:00 - 20:00</td>
+			</tr>
+		</table>
+
+Atributos de td(combinación de celdas):
+
+		* colspan="n": para agrupar o combinar n celdas de una fila.
+
+		<table>
+	    <tr>
+	      <td colspan="3">Comunidad Valenciana</td>
+	    </tr>
+	    <tr>
+	      <td>Castellón</td>
+	      <td>Valencia</td>
+	      <td>Alicante</td>
+	    </tr>
+	</table>
+
+		* rowspan="n": para agrupar n columnas de una fila.
+
+		<table>
+	    <tr>
+	      <td rowspan="3">C. Valenciana</td>
+	      <td>Alicante</td>
+	    </tr>
+	    <tr>
+	      <td>Castellón</td>
+	    </tr>
+	    <tr>
+	      <td>Valencia</td>
+	    </tr>
+	</table>
+
+Atributos de las tablas:
+
+		* <caption>: se pone justo despues de <table>, sirve para poner un texto opcional encima de la tabla. Permite etieuqtas de línea <strong> y <em>
+
+		* <thead>: Tipo especial de fila que representa la fila que hace de 
+		cabecera de la tabla.En este caso, las celdas se definen con el elemento <th> (table header). En este caso también es necesario utilizar el elemento  <tbody> para separar la cabecera del cuerpo de la tabla.
+
+		*<tfoot>: Pie de tabla. Tiene que definirse antes del elemento <tbody>
+
+		<table>
+		  <thead>
+		  <tr>
+		     <th>Mes</th>
+		     <th>Ahorros</th>
+		  </tr>
+		  </thead>
+		  <tfoot>
+		  <tr>
+		      <td>Total</td>
+		      <td>180 euros</td>
+		  </tr>
+		  </tfoot>
+		  <tbody>
+		  <tr>
+		     <td>Enero</td>
+		     <td>100 euros</td>
+		  </tr>
+		  <tr>
+		      <td>Febrero</td>
+		      <td>80 euros</td>
+		  </tr>
+		  </tbody>
+		</table> 
+
+6.Formularios
+	6.1 Control <input>
+		- Servirá para crear una gran cantidad de controles distintos. Algunos de los atributos más usados:
+			type = "": indica el tipo de control que se incluye en el formulario.
+			name = "": Nombre de control(para que el servidor pueda procesar el formulario)
+			value = "": Valor inicial del control.
+			size = "": Tamaño inicial del control(en pixeles, salvo para campos de texto y de password que se
+				refiere al numero de caracteres).
+			disabled = "": El control aparece deshabilitado y su valor no se envía al servidor junto con el
+			resto de datos.
+			readonly = "": El contenido de control no se puede modificar.
+			alt = "": Al igual que con las imagenes, representa una descripcion de control.
+
+		- Dependiendo del valor de type podemos crear estos controles:
+			* Cuadros de texto: 
+				· type = "text": value sirve para determinar el valor por defecto
+						mientras que name indica el nombre del parametro que se va a enviar al servidor.
+				· type = "password": tenemos un cuadro de texto en el que el texto introducido no se ve.
+					En la URL si que se ve
+
+			* Boton de envio de formulario: 
+				· type = "submit": El navegador se encarga de enviar los datos automaticamente cuando el usuario
+					pincha el boton de acuerdo al metodo definido en el formulario.
+					: El atributo value representa el nombre
+							del boton. Si usamos el metodo GET veremos que el propio botón también se envía como
+							parámetro de consulta.
+
+			* Botón de reinicio de formulario
+				· type = "reset": Al pulsarlo el navegador borra toda la informacion introducida y muestra el estado
+					original del formulario.
+
+					EJEMPLO DE TODO LO ANTERIOR:
+				<form action="http://www.google.com" method="get">
+				    Búsqueda:
+				    <input type="text" name="q" value="" />
+				    <input type="submit" name="enviar" value="enviar"/>
+				    <br/>
+				    <input type="reset" value="Borrar Formulario"/>
+				</form>
+
+			* Casillas de verificación
+				· type = "checkbox": Crea un conjunto de casillas de verificación. El valor interno puede ser on/off, 
+					yes/no, true/false.
+				Lenguajes de programación: <br/>
+				<input name="java" type="checkbox" value="on"/> Java
+				<input name="cplusplus" type="checkbox" value="on"/> C++
+				<input name="csharp" type="checkbox" value="on"/> C#
+				<input name="otros" type="checkbox" value="on"/> Otros	
+
+				· type = "radio": Selección exclusiva. El valor coincide con el título que aparece junto al botón y hay que usar el mismo 
+					name para formar el grupo de selección exclusiva.
+					Sexo <br/>
+					<input type="radio" name="sexo" value="hombre" checked="checked" /> Hombre
+					<input type="radio" name="sexo" value="mujer" /> Mujer
+
+			* Adjuntar archivos
+				· type = "file": genera un botón que permite abrir un explorador de archivos en el cliente con el que seleccionar el archivo que se quiera adjuntar. Si se usa este elemento entonces el formulario ha de utilizar OBLIGATORIAMENTE el método post y añadir un atributo enctype="multipart/form-data".
+					<form name="fichero" action="procesa_fichero.php" method="post" enctype="multipart/form-data">
+					Fichero: <input type="file" name="archivo" />
+					<input type="submit" value="Enviar">
+					</form>
+
+		- Cuadros de texto de varias líneas: Si queremos incluir un cuadro de texto de varias líneas en el formulario 
+			necesitamos usar el elmento <textarea>
+				Comentarios<br/>
+				<textarea name="nombre" rows="4" cols="50">
+				Escribe aquí tu comentario
+				</textarea>
+			Los atributos rows y cols definen el tamaño inicial del cuadro, apareciendo una barra si se introduce más.
+			Rows define el nombre de filas y cols el de columnas.
+
+		- Botones: dispone de un tipo de botón genérico además de los creados con el elemento.
+		<button type="submit" name="submit2" value="Enviar formulario"> 
+		   <img src="http://web3.unt.edu/riskman/Images/Icons/greencheck.jpg" /> Enviar
+		</button>
+		 En este botón se puede meter código HTML dentro, lo que nos permite tener botones más ricos visualmente. Hay tres tipos:
+			* Submit: envía el formulario a su destino.
+			* Reset: pone todos los campos a sus valores iniciales.
+			* button: no hace nada. 
+
+		- Lista de selección: Utilizamos el elemento <select>. Cada uno de los elementos se mete dentro de un elemento option.
+			El valor que se envíe al servidor (value) es independiente de los que se mostrará en la lista (que puede ser un
+			elemento HTML).
+			Lenguaje de programación: 
+				<select name="lenguajes">
+  					<option value="c">C</option>
+  					<option value="cplusplus">C++</option>
+  					<option value="java" selected>Java</option>
+  					<option value="php">PHP</option>
+  					<option value="python">Python</option>
+				</select>
+
+		- Agrupaciones de elementos: el elemento <fieldset> sirve para ver mejor las partes de un formulario agrupando elementos relacionados. Puede contener un elemento <legend>, que es un título que se visualiza con el grupo.
+				<fieldset>
+  					<legend>Información personal:</legend>
+  						Nombre: <input type="text" size="50"><br>
+  						E-mail: <input type="text" size="50"><br>
+  						Ciudad: <input type="text" size="20">
+					</fieldset>

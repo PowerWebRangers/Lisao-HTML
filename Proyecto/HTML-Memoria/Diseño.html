@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metainformación sobre el documento-->
+      <meta charset="utf-8">
+      <meta name="author" content="Grupo 10 - IU" /> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+      <!-- Etiquetas para el navegador-->
+      <meta name="keywords" content="IU, HTML, UCM, Kingdom Hearts III, Kingdom, Hearts, III, informática, web" />
+      <meta name="description" content="Kingdom Hearts III" />
+
+        <!-- Links -->
+      <link rel="icon" href="../images/logoUCM.png">
+        <!-- Bootstrap core CSS -->
+      <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+          <!-- Bootstrap theme -->
+      <link href="../dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+      <link href="../css/estilosPropios.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+  
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-sm-2 col-md-2 sidebar">
+            <a href="./Inicio.html"><img src = "../images/logoUCM.png" class= "img-responsive" alt= "Imagen responsive"></a>
+
+             <ul class="nav nav-sidebar">
+              <li><a href="./Inicio.html"><b>Inicio</b></a></li>
+
+            <li><a href="./EstudioDeLaCompetencia.html">
+              <b>Estudio de la competencia </b></a>
+            </li>
+           
+          
+            <li><a href="./Patrones.html"><b>Patrones utilizados</b></a></li>
+            <li class="active"><a href="./Diseño.html"><b>Decisiones de diseño</b><span class="sr-only">(current)</span></a></li>
+              <li ><a href="./Objetivos.html"><b>Objetivos</b></a></li>
+            <li><a href="./PaginaFinal.html"><b>Página final</b></a></li>
+
+          </ul>
+        </div>
+
+      </div>
+
+
+      <div class="col-sm-5 col-sm-offset-5 col-md-8 col-md-offset-3 main">
+        <div class="row">
+          <div class="jumbotron">
+         
+              <h1>Decisiones de diseño</h1>
+                  <br>
+
+                <p>
+                  En este apartado definimos las reglas de oro que se cumplen en la página, y las demás decisiones de diseño.
+                </p>
+
+                <br>
+                <h2><b>Estructura</b></h2>
+                    <br>
+
+                <p>
+                  <b>Primero</b> mostramos en gran tamaño un gif del juego, con el título. Si el usuario pulsa el botón de "Ver Tráiler" se reproducirá el trailer de youtube en la propia ventana. Hemos optado por esta opción para poder mostrar el material gráfico más relevante en una primera impresión del juego y así captar la atención del usuario desde el primer momento.
+                </p>
+                <p>
+                 <b>Continúa</b> con una pequeña descripción del juego como introducción de la trama pero sin entrar en detalle, para generar en el usuario curiosidad por la historia y ganas de seguir explorando el juego en la página web.   
+                </p>
+                  <p>
+                  <b>Después</b>, aparecen los logotipos de las plataformas para las que está disponible el videojuego, así como enlaces de compra.
+                </p>
+                 <p>
+                  <b>A continuación</b>, aparecen imágenes y breves descripciones de los protagonistas del videojuego para los usuarios que desconozcan de qué trata la franquicia. Se muestran también los distintos mundos que sirven de escenarios, así como escenas <i>in-game</i> para dar una idea al usuario de cómo serán los escenarios y la interfaz dentro del videojuego.
+                </p>
+                 <p>
+                  <b>Finalmente</b>, la página se cierra con un apartado con la información de la empresa que desarrolla el videojuego, con iconos para las redes sociales de contacto con la misma, y también da crédito a los distintos publishers del juego. 
+                </p>
+
+                <br>
+                 <h2><b>Reglas de diseño</b></h2>
+                     <br>
+
+                  <p><b>Consistencia:</b> En la página se usa terminología del videojuego y el género de fantasía de forma consistente, con referencias a <i>llaves espada</i> y bastones mágicos. Mantiene una concordancia con el uso de colores ligeramente más cálidos de las imágenes del juego y los personajes con los colores frios del fondo.
+                  </p>
+
+                  <br>
+                  <p><b>Usabilidad universal:</b> La información que se aporta en la página con respecto al argumento, los mundos, personajes están adaptados para que tanto una persona que no sepa nada del juego como una que lo conozca previamente entiendan a lo que van a jugar. Los enlaces de compra están situados justo debajo del trailer para que un usuario que ya conozca el juego pueda ir sin perder tiempo y comprarlo, mientras que un novato puede seguir bajando, leer más informacion y convencerse</p>
+
+                  <br>
+                  <p><b>Deshacer cambios:</b> El video se abre en una ventana emergente, lo cual puede molestar a la hora de volver a la página principal. Pero está implementado que pulsando en la "X" o en cualquier sitio fuera del video éste se cierra.</p>
+
+                  <br>
+                  <p><b>Regla de los tres clicks:</b> El usuario puede entrar en la página y en menos de tres clicks comprar el videojuego. Un usuario experimentado podria entrar, ver el video, y al salir acceder directamente al apartado de compra. Un usuario novato tendría que explorar la página entera, pero al estár toda la dirección necesaria en la misma página no se frustra al navegar por la misma.</p>
+                 <br>
+                  <p><b>Reducir la carga de memoria:</b> En la página se ha condensado la información referente a la compra, al juego, y a las redes sociales para simplificar la navegación por la página, reducir el movimiento y generar una sensación de documentación en bloque, mucho más sencilla para el usuario. Los grupos, además, son pequeños y condensan aspectos esenciales de la página.</p>
+
+
+            </div>
+
+          </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

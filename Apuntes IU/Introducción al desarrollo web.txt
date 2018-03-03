@@ -1,0 +1,78 @@
+Introducción al desarrollo web
+
+---SUBLIME TEXT 2------
+
+Paquetes adicionales:
+
+*Package Control. Ayuda en la instalación de otros paquetes.
+Copiar y pegar esto en consola:
+
+import urllib2,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')
+
+Funcionalidad básica:
+crtl + shift + p Abre la Command Palette
+
+Todos los Package Control commands empiezan con Package Control
+Buscar Package Control:
+
+-Install Package: Muestra todos los paquetes incluidos en el default channel, ademas de los repositorios que añadamos
+
+-Add Repository: Permite instalar y actualizar paquetes desde github o BitBucket.
+Para añadir uno de github: https://github.com/username/repo
+
+-Remove Package. Borra la carpeta de Package
+
+HAY MUCHOS MAS COMANDOS NO TAN INTERESANTES
+
+*Browser Refresh. Sirven para refrescar automáticamente el navegador a medida que guardamos el código fuente desde Sublime Text.
+
+Instalamos buscando browser Refresh en crtl + shift + p
+
+Para completar la instalación vamos a Preferences" > "Package Settings" > "Browser Refresh" > "Key Bindings - User"
+
+ahora con Ctrl + Shift + R ABRIMOS EL NAVEGADOR
+
+*Emmet. Es un plugin que permite crear código HTML de una manera extremadamente rápida mediante abreviaturas. Al principio puede ser algo complicado hasta que se conoce la sintaxis pero una vez acostumbrados la velocidad de desarrollo aumenta extremadamente.
+Actualmente hasta que no sepamos de HTML no interesa
+
+*JSHintGutter. Posibilita la ejecución de un proceso de Linting, que ayuda a detectar algunos posibles errores en el código en JavaScript. Este paquete es completamente opcional y obliga a tener instalado Node.js.
+
+Instalación: Tener instalado node.js para correr JSHint
+Ctrl+Shift+P 
+Package Control: Install Package
+type js gutter, select JSHint Gutter
+
+Usar:
+ctrl + shift + p -> type jshint
+
+Abrir un JS file, abrir la consola Sublime Text y escribir view.run_command("jshint")
+
+Para no tener que escribir en Consola todo el rato, podemos añadir un atajo
+going to Preferences -> Key Bindings - User y añadiendo { "keys": ["super+shift+j"], "command": "jshint" }
+
+//----------SERVIDORES WEB------------------
+
+Aunque se puede hacer directamente abriende las paginas del sitio desarrollado en un explorador, es recomendable realizar las pruebas de desarrollo en un servidor web.
+Instalar en Windows XAMPP: https://www.apachefriends.org/es/index.html.
+
+Inicialización del servidor:
+Darle al boton Start a la derecha de Apache
+Escribimos localhost en el navegador
+
+Para poder ver nuestro sitio web tenemos que tener todos los documentos HTML, CSS, JS, imágenes, ect bajo la carpeta htdocs de XAMPP.
+Buscar en el menú de inicio de windows el acceso directo llamado XAMPP htdocs folder.
+
+Tener un orden con los sitios que vayamos realizando, estando en carpetas indepentientes y conteniendo un punto de entrada unico: index.html.
+Si ponemos en el navegador la url localhost\miPrimerSitio 
+
+//----------SERVIDORES WEB------------------
+
+//---------NAVEGADOR-----------
+
+Google Chrome proporciona consola JS.
+Se muestra en Windows->Herramientas->Consola de Javascript o shift-ctrl+j.
+Es importante activar una opción de consola para evitar comportamiento anómalos durante el desarrollo. Pulsar en el botón de Configuración (icono rueda dentada) y en el apartado General, activar la opción Disable cache(while DevTools is open)
+
+
+//---------NAVEGADOR-----------
+
