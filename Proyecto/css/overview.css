@@ -1,0 +1,31 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+div {
+
+  border-color = red;
+  border-style = double;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.imagenHechizo {
+  height:163px;
+  width :132px;
+}
