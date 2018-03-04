@@ -26,6 +26,17 @@ div {
 }
 
 .imagenHechizo {
-  height:163px;
-  width :132px;
+  height:100px;
+  width :100px;
+  border-style: groove;
+  border-width: 7px;
+  border-color: coral;
+}
+
+.spriteCharacter {
+  height:100px;
+  width :100px;
+  border-style: groove;
+  border-width: 15px;
+  border-color: coral;
 }
