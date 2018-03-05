@@ -12,31 +12,46 @@ background-size: cover; !important
   padding-top:15px;
   min-height: 400px;
   height: auto;
-  background-image: url("../images/placeholder.jpg");
+color:red;
   background-size: cover;
 }
+.factP{
+  font-family: Fredericka;
+}
 .borders{
-    border-bottom: 5px solid #c3a568;
+  border-bottom: 5px solid coral;
+  border-bottom-style: groove;
 }
-.border-left {
-border-left: 3px solid #c3a568;
+.slightborder {
+  border-top: 1px solid coral;
+
 }
+
 .border-right{
-border-right: 3px solid #c3a568;
+border-right: 5px solid coral;
+border-right-style: groove;
+}
+.main-title {
+  font-size: 90px;
+  font-family:MedievalSharp, bold;
+
 }
 .title{
   font-family:MedievalSharp, bold;
 }
 
 #gf1 {
-background-color: #fff;
+
+background-image: url("../images/placeholder.jpg");
 }
 
 #gf2 {
-  background-color: #faf
+
+  background-image: url("../images/chess.jpg");
 }
 
 #gf3 {
+  background-image: url("../images/placeholder.jpg");
 
 }
 body{
