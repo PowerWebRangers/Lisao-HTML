@@ -40,6 +40,13 @@ div {
   border-width: 15px;
   border-color: coral;
 }
+.spritePlayer{
+  height:100px;
+  width :100px;
+  border-style: groove;
+  border-width: 15px;
+  border-color: blue;
+}
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -105,4 +112,11 @@ div {
   .featurette-heading {
     margin-top: 120px;
   }
+}
+
+
+.botonCreaPerfil{
+float: right;
+
+
 }
