@@ -23,25 +23,69 @@
 
       <!-- Hoja de estilo propia -->
       <link href="../css/signin.css" rel="stylesheet">
+      <link href="../css/navbar.css" rel="stylesheet">
 
     </head>
 
   <body>
 
     <div class="container">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="./Home.html">Liçao de humildade</a>
+                </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                      <li><a href="./Overview.html">Perfil</a></li>
+                      <li><a href="./Tienda.html">Tienda</a></li>
+                      <li><a href="./Jugar.html">Luchar</a></li>
+                      <li><a href="./Estadisticas.html">Estadísticas</a></li>
+
+                      <!-- MENU DESPLEGABLE -->
+                      <!--
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li class="dropdown-header">Nav header</li>
+                          <li><a href="#">Separated link</a></li>
+                          <li><a href="#">One more separated link</a></li>
+                        </ul>
+                      </li>
+                      -->
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="./Registro.html">Registrarse</a></li>
+                      <li class="active"><a href="./InicioSesion.html">Inicia Sesión</a></li>
+                    </ul>
+                  </div><!--/.nav-collapse -->
+              </div><!--/.container-fluid -->
+            </nav>
 
       <form class="form-signin">
         <h2 class="form-signin-heading">Inicia Sesión</h2>
-        <label for="inputEmail" class="sr-only">Dirección de correo</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="firstName" class="sr-only">Dirección de correo</label>
+        <input type="text" id="firstName" class="form-control" placeholder="Usuario" required autofocus>
         <label for="inputPassword" class="sr-only">Contraseña</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Recuérdame
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+         <!-- TYPE DEBERÍA SER submit para cuando tengamos bases de datos -->
+          <a  href="./Overview.html" role="button">   <button class="btn btn-lg btn-primary btn-block" type="button">Entrar</button></a>
       </form>
 
     </div> <!-- /container -->

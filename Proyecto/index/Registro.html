@@ -1,96 +1,112 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!-- Include the above in your HEAD tag -->
 
 <!DOCTYPE html>
 <html lang="en">
     <head> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Liçao de humildade</title>
 
+      <!-- Metainformación sobre el documento-->
+      <meta charset="utf-8">
+      <meta name="author" content="PowerWebRangers-IW" /> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-    <!-- Website CSS style -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Etiquetas para el navegador-->
+      <meta name="keywords" content="IW, UCM, Liçao de Humildade" />
+      <meta name="description" content="Liçao de Humildade" />
 
-    <!-- Website Font style -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-    <link href="../css/registro.css" rel="stylesheet">
+      <!-- Links -->
+      <link rel="icon" href="../images/logoUCM.png">
 
-    <title>Admin</title>
+      <!-- Bootstrap core CSS -->
+      <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Bootstrap theme -->
+      <link href="../dist/css/bootstrap-theme.min.css" rel="stylesheet">
+
+      <!-- Hoja de estilo propia -->
+      <link href="../css/registro.css" rel="stylesheet">
+      <link href="../css/navbar.css" rel="stylesheet">
+
   </head>
   <body>
-    <div class="container">
-      <div class="row main">
-        <div class="main-login main-center">
-        <h5>Sign up once and watch any of our free demos.</h5>
-          <form class="" method="post" action="#">
-            
-            <div class="form-group">
-              <label for="name" class="cols-sm-2 control-label">Your Name</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+   
+          <div class="container">
+
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="./Home.html">Liçao de humildade</a>
                 </div>
-              </div>
-            </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                      <li><a href="./Overview.html">Perfil</a></li>
+                      <li><a href="./Tienda.html">Tienda</a></li>
+                      <li><a href="./Jugar.html">Luchar</a></li>
+                      <li><a href="./Estadisticas.html">Estadísticas</a></li>
 
-            <div class="form-group">
-              <label for="email" class="cols-sm-2 control-label">Your Email</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+                      <!-- MENU DESPLEGABLE -->
+                      <!--
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li class="dropdown-header">Nav header</li>
+                          <li><a href="#">Separated link</a></li>
+                          <li><a href="#">One more separated link</a></li>
+                        </ul>
+                      </li>
+                      -->
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="active"><a href="./Registro.html">Registrarse</a></li>
+                      <li><a href="./InicioSesion.html">Inicia Sesión</a></li>
+                    </ul>
+                  </div><!--/.nav-collapse -->
+              </div><!--/.container-fluid -->
+            </nav>
+            <form class="form-horizontal" role="form">
+                <h2>Crear una cuenta</h2>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Nombre de usuario</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="Nombre" class="form-control" autofocus>
+                        <span class="help-block">Ejemplo: Willyrex, Mundodesconocido</span>
+                    </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="username" class="cols-sm-2 control-label">Username</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" placeholder="Email" class="form-control">
+                    </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="password" class="cols-sm-2 control-label">Password</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Contraseña</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="password" placeholder="Contraseña" class="form-control">
+                    </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-              <div class="cols-sm-10">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                      <!-- TYPE DEBERÍA SER submit para cuando tengamos bases de datos -->
+                        <a  href="./Overview.html" role="button"> <button type="button" class="btn btn-primary btn-block">Registrarse</button> </a>
+                    </div>
                 </div>
-              </div>
-            </div>
+            </form> <!-- /form -->
+        </div> <!-- ./container -->
 
-            <div class="form-group ">
-              <a href="http://deepak646.blogspot.in" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
-            </div>
-            
-          </form>
-        </div>
-      </div>
-    </div>
-
-     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+      <!-- Bootstrap core JavaScript ================================================== -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="../assets/jquery.min.js"><\/script>')</script>
+      <script src="../dist/js/bootstrap.min.js"></script>
+      <script src="../assets/js/docs.min.js"></script>
   </body>
 </html>
